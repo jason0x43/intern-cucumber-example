@@ -1,0 +1,6 @@
+{
+	"name": "intern-cucumber-example",
+	"dependencies": {
+		"intern": "https://github.com/jason0x43/intern/archive/cucumber.tar.gz"
+	}
+}
