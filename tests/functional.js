@@ -1,0 +1,3 @@
+define([
+	'./cuke-functional'
+], function () {});
