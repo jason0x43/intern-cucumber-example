@@ -13,6 +13,9 @@ Feature: Core: Scenarios, Steps, Mappings
   each step to a function. If such a mapping exists, the function is
   executed, and the result is communicated to the user.
 
+	# Something goes here
+
+  @foo
   Scenario: All steps passing means the scenario passes
     Given a scenario with:
       """
@@ -23,3 +26,14 @@ Feature: Core: Scenarios, Steps, Mappings
     And the step "the result is 9" has a passing mapping
     When Cucumber executes the scenario
     Then the scenario passes
+
+  Scenario Outline: Eating
+	Given there are <start> cucumbers
+	When I eat <eat> cucumbers
+	Then I should have <left> cucumbers
+
+	Examples:
+	  | start | eat | left |
+      | 12    | 5   | 7    |
+      | 3     | 2   | 1    |
+
