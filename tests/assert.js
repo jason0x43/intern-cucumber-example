@@ -11,39 +11,37 @@ define([
 		+ 'Feature: Assertions\n'
 		+ '  I want to be able to use assert* in my step definitions\n'
 		+ '  Scenario: assert_equal\n'
-		+ '	Given x = 5\n'
-		+ '	And y = 5\n'
-		+ '	Then I can assert that x == y\n'
+		+ '	   Given x = 5\n'
+		+ '	   And y = 5\n'
+		+ '	   Then I can assert that x == y\n'
 		+ '  Scenario: assert_not_equal\n'
-		+ '	Given x = 5\n'
-		+ '	And y = 7\n'
-		+ '	Then I can assert that x != y';
+		+ '	   Given x = 5\n'
+		+ '	   And y = 7\n'
+		+ '	   Then I can assert that x != y';
 
 	registerSupport(function () {
-		var state;
-
 		this.Before(function(callback) {
-			state = {};
+			this.x = this.y = undefined;
 			callback();
 		});
 
 		this.Given(/^x = 5$/, function(callback) {
-			state.x = 5;
+			this.x = 5;
 			callback();
 		});
 
 		this.Given(/^y = (\d+)$/, function(value, callback) {
-			state.y = Number(value);
+			this.y = Number(value);
 			callback();
 		});
 
 		this.Then('I can assert that x != y', function(callback) {
-			assert.notStrictEqual(state.x, state.y);
+			assert.notStrictEqual(this.x, this.y);
 			callback();
 		});
 
 		this.Then('I can assert that x == y', function(callback) {
-			assert.strictEqual(state.x, state.y);
+			assert.strictEqual(this.x, this.y);
 			callback();
 		});
 	}, feature);
