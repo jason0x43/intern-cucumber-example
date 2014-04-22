@@ -22,10 +22,13 @@ define({
 	},
 	loader: {
 		// Packages that should be registered with the loader in each testing environment
-		packages: [ { name: 'app', location: '.' } ]
+		packages: [
+			{ name: 'app', location: 'app' },
+			{ name: 'tests', location: 'tests' }
+		]
 	},
-	suites: [ 'app/tests/unit' ],
-	functionalSuites: [ 'app/tests/functional' ],
+	suites: [ 'tests/unit' ],
+	functionalSuites: [ 'tests/functional' ],
 	//excludeInstrumentation: /./
-	excludeInstrumentation: /(?:node_modules)\//
+	excludeInstrumentation: /(?:node_modules|tests)\//
 });

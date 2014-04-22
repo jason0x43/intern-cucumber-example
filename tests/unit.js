@@ -1,5 +1,4 @@
 define([
-	'./cuke-unit',
-	'./cuke-unit-feature',
-	'./object'
+	'./fib',
+	'./assert'
 ], function () {});

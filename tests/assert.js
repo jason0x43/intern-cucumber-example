@@ -8,9 +8,7 @@ define([
 	'intern/chai!assert'
 ], function (registerSupport, require, assert) {
 	var feature = ''
-		+ 'Feature: Simple test\n'
-		+ '  In order to run a simple test\n'
-		+ '  As a Cucumber user\n'
+		+ 'Feature: Assertions\n'
 		+ '  I want to be able to use assert* in my step definitions\n'
 		+ '  Scenario: assert_equal\n'
 		+ '	Given x = 5\n'

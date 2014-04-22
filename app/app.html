@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fibonacci</title>
+		<style>
+			#output {
+				height: 150px;
+				position: absolute;
+				top: 50%;
+				width: 100%;
+				text-align: center;
+				margin-top: -75px;
+				font-family: sans-serif;
+			}
+			#value {
+				line-height: 75px;
+				font-size: 50px;
+			}
+		</style>
+		<script>
+			var dojoConfig = {
+				async: true,
+				baseUrl: '/',
+				packages: [
+					{ name: 'app', location: 'app' },
+					{ name: 'dojo', location: 'node_modules/dojo' }
+				]
+			}
+		</script>
+		<script src="../node_modules/dojo/dojo.js"></script>
+		<script src="/app/main.js"></script>
+	</head>
+	<body>
+		<div id="output">
+			<h1>Fibonacci</h1>
+			<div id="value">0</div>
+			<button type="button" id="next">Next</button>
+		</div>
+	</body>
+</html>
