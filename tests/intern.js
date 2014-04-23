@@ -12,9 +12,8 @@ define({
 	webdriver: {
 		// host: 'localhost',
 		host: '10.0.1.123',
-		port: 4444,
-		username: 'jcheatham_intern',
-		accessKey: '0839718a-e73e-4a4d-97c2-90baab0e8057'
+		port: 4444
+
 	},
 	useLoader: {
 		'host-node': 'dojo/dojo',
