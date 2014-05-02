@@ -9,21 +9,13 @@ Feature: Fibonacci test
 	And it is reset
 	Then I assert that the value is null
 
-  Scenario: one next
+  Scenario Outline: nexting
     Given a new fib counter
-	When next is called
-	Then I assert that the value is null
+	When next is called <times> times
+	Then I assert that the value = <value>
 
-  Scenario: two nexts
-    Given a new fib counter
-	When next is called
-	And next is called
-	Then I assert that the value = 1
-
-  Scenario: four nexts
-    Given a new fib counter
-	And next is called
-	And next is called
-	And next is called
-	And next is called
-	Then I assert that the value = 3
+	Examples:
+		| times | value |
+	    |   2   |   1   |
+	    |   3   |   2   |
+	    |   5   |   5   |

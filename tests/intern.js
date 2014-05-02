@@ -10,8 +10,7 @@ define({
 	maxConcurrency: 3,
 	useSauceConnect: false,
 	webdriver: {
-		// host: 'localhost',
-		host: '10.0.1.123',
+		host: 'localhost',
 		port: 4444
 
 	},

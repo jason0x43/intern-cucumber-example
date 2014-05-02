@@ -11,8 +11,15 @@ define([
 		// Additional support functions can be mixed in this way as well.
 		sequenceSupport.call(this);
 
-		this.Given('a new fib counter', function(callback) {
+		this.Given('a new fib counter', function (callback) {
 			this.seq = new Fib();
+			callback();
+		});
+
+		this.When('next is called $value times', function (value, callback) {
+			for (var i = 0; i < Number(value); i++) {
+				this.seq.next();
+			}
 			callback();
 		});
 	});
